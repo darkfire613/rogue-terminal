@@ -11,7 +11,7 @@
 #ifndef NPC_H
 #define NPC_H
 
-#include "Inventory.h"
+//#include "Inventory.h"
 
 class NPC
 {
@@ -26,7 +26,7 @@ private:
 
   int health;
 
-  Inventory inv;
+//  Inventory inv;
 
   bool friendly;
 

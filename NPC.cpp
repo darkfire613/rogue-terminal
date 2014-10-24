@@ -13,12 +13,12 @@
 //constructor and destructor
 NPC::NPC()
 {
-  setStr(10);
-  setDex(10);
-  setCon(10);
-  setIntl(10);
-  setWis(10);
-  setCha(10);
+  set_str(10);
+  set_dex(10);
+  set_con(10);
+  set_intl(10);
+  set_wis(10);
+  set_cha(10);
 }
 
 NPC::~NPC()
