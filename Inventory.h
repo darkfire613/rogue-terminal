@@ -21,8 +21,10 @@ private:
   typedef invItem *invItemPtr;
 
   invItemPtr head;
-  invItemPtr tail;
 public:
-
+  void AddItem(Item newItem);
+  void DelItem(char* targetName);
+  void PrintItems();
+  Item getItem(char* targetName);
 
 };
