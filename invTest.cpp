@@ -28,7 +28,11 @@ int main()
 
   testInv.PrintItems();
 
+  std::cout << "deleting item 2" << std::endl;
+
   testInv.DelItem("item 2");
+
+  std::cout << "printing again" << std::endl;
 
   testInv.PrintItems();
 

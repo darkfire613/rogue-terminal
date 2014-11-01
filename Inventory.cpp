@@ -29,7 +29,7 @@ Inventory::~Inventory()
 
 void Inventory::AddItem(Item newItem)
 {
-  invItemPtr adding;
+  invItemPtr adding = new invItem;
   adding -> item = newItem;
   adding -> next = head;
   head = adding;
@@ -46,31 +46,19 @@ void Inventory::DelItem(char* targetName)
   {
     invItemPtr curr = head;
     invItemPtr prev = curr;
-    while (curr != NULL)
+    while (curr != NULL && targetName != curr->item.get_name())
     {
-      // One-item case
-      if (curr == head)
-      {
-        head = NULL;
-        delete curr;
-        size--;
-        break;
-      }
-
-      else if (curr->item.get_name() == targetName)
-      {
-        prev->next = curr->next;
-        curr->next = NULL;
-        delete curr;
-        size--;
-        break;
-      }
-
-      else
-      {
-        prev = curr;
-        curr = curr->next;
-      }
+      prev = curr;
+      curr = curr->next;
+    }
+    if (targetName == curr->item.get_name())
+    {
+      delete curr;
+      size--;
+    }
+    else
+    {
+      std::cout << "nothing to delete" << std::endl;
     }
   }
 }
@@ -78,6 +66,10 @@ void Inventory::DelItem(char* targetName)
 void Inventory::PrintItems()
 {
   invItemPtr curr = head;
+  if (curr == NULL)
+  {
+    std::cout << "EMPTY" << std::endl;
+  }
   while (curr != NULL)
   {
     std::cout << curr->item.get_name() << std::endl;
