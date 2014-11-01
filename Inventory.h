@@ -16,15 +16,20 @@ private:
   {
     Item item;
     invItem *next;
-  }
+  };
 
   typedef invItem *invItemPtr;
 
   invItemPtr head;
+
+  int size;
 public:
+  Inventory();
+  ~Inventory();
+
   void AddItem(Item newItem);
   void DelItem(char* targetName);
   void PrintItems();
-  Item getItem(char* targetName);
+  Item* getItem(char* targetName);
 
 };

@@ -8,6 +8,7 @@
  */
 
 #include "Item.h"
+#include <iostream>
 
 Item::Item()
 {
@@ -20,12 +21,28 @@ Item::~Item()
 
 }
 
-void Item::set_name (char* name)
+void Item::set_name (char* nameIn)
 {
-  name_ = name;
+  name = nameIn;
 }
 
-void Item::set_description (char* description)
+void Item::set_description (char* descriptionIn)
 {
-  description_ = description;
+  description = descriptionIn;
+}
+
+char* Item::get_name()
+{
+  return name;
+}
+
+char* Item::get_description()
+{
+  return description;
+}
+
+void Item::printItem()
+{
+  std::cout << "NAME: " << name << std::endl;
+  std::cout << "DESC: " << description << std::endl;
 }

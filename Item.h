@@ -13,17 +13,19 @@
  class Item
  {
  private:
-  char* name_;
-  char* description_;
+  char* name;
+  char* description;
  public:
   Item();
   ~Item();
 
-  void set_name (char* name);
-  void set_description (char* description);
+  void set_name (char* nameIn);
+  void set_description (char* descriptionIn);
 
-  char* name();
-  char* description();
+  char* get_name();
+  char* get_description();
+
+  void printItem();
 
  };
 
