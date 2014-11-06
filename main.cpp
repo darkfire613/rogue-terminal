@@ -1,31 +1,40 @@
-/*
-  Owen Monsma
-  darkfire613@icloud.com
-  main.cpp
-  October 24, 2014
-
-  A simple command-line roguelike text-based dungeon-crawling adventure
- */
-
 #include <iostream>
-#include "NPC.h"
+#include "Item.h"
+#include "Inventory.h"
 
 int main()
 {
-  NPC testDude;
-  testDude.set_str(8);
-  testDude.set_dex(9);
-  testDude.set_con(10);
-  testDude.set_intl(11);
-  testDude.set_wis(12);
-  testDude.set_cha(13);
+  Item test1;
+  test1.set_name("item 1");
+  test1.set_description("description 1");
 
-  std::cout << "str: " << testDude.str() << std::endl;
-  std::cout << "dex: " << testDude.dex() << std::endl;
-  std::cout << "con: " << testDude.con() << std::endl;
-  std::cout << "int: " << testDude.intl() << std::endl;
-  std::cout << "wis: " << testDude.wis() << std::endl;
-  std::cout << "cha: " << testDude.cha() << std::endl;
+  Item test2;
+  test2.set_name("item 2");
+  test2.set_description("description 2");
+
+  Item test3;
+  test3.set_name("item 3");
+  test3.set_description("description 3");
+
+  test1.printItem();
+  test2.printItem();
+  test3.printItem();
+
+  Inventory testInv;
+
+  testInv.AddItem(test1);
+  testInv.AddItem(test2);
+  testInv.AddItem(test3);
+
+  testInv.PrintItems();
+
+  std::cout << "deleting item 3" << std::endl;
+
+  testInv.DelItem("item 3");
+
+  std::cout << "printing again" << std::endl;
+
+  testInv.PrintItems();
 
   return 0;
 }
