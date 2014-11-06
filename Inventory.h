@@ -28,8 +28,8 @@ public:
   ~Inventory();
 
   void AddItem(Item newItem);
-  void DelItem(char* targetName);
+  void DelItem(std::string targetName);
   void PrintItems();
-  Item* getItem(char* targetName);
+  Item* getItem(std::string targetName);
 
 };

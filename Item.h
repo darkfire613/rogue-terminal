@@ -10,20 +10,22 @@
  #ifndef ITEM_H
  #define ITEM_H
 
+ #include <string>
+
  class Item
  {
  private:
-  char* name;
-  char* description;
+  std::string name;
+  std::string description;
  public:
   Item();
   ~Item();
 
-  void set_name (char* nameIn);
-  void set_description (char* descriptionIn);
+  void set_name (std::string nameIn);
+  void set_description (std::string descriptionIn);
 
-  char* get_name();
-  char* get_description();
+  std::string get_name();
+  std::string get_description();
 
   void printItem();
 

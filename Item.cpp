@@ -12,8 +12,8 @@
 
 Item::Item()
 {
-  set_name("purple dildo");
-  set_description("30 inches long, belongs to your mom");
+  set_name("name");
+  set_description("description");
 }
 
 Item::~Item()
@@ -21,22 +21,22 @@ Item::~Item()
 
 }
 
-void Item::set_name (char* nameIn)
+void Item::set_name (std::string nameIn)
 {
   name = nameIn;
 }
 
-void Item::set_description (char* descriptionIn)
+void Item::set_description (std::string descriptionIn)
 {
   description = descriptionIn;
 }
 
-char* Item::get_name()
+std::string Item::get_name()
 {
   return name;
 }
 
-char* Item::get_description()
+std::string Item::get_description()
 {
   return description;
 }

@@ -2,7 +2,7 @@
   Owen Monsma
   darkfire613@icloud.com
   Inventory.cpp
-  October 24, 2014
+  October 31, 2014
 
   Stores an inventory of Item objects in a linked list
  */
@@ -36,7 +36,7 @@ void Inventory::AddItem(Item newItem)
   size++;
 }
 
-void Inventory::DelItem(char* targetName)
+void Inventory::DelItem(std::string targetName)
 {
   if (head == NULL)
   {
@@ -53,8 +53,22 @@ void Inventory::DelItem(char* targetName)
     }
     if (targetName == curr->item.get_name())
     {
-      delete curr;
-      size--;
+      if (curr == head) // first item case
+      {
+        head = curr->next;
+        curr->next = NULL;
+        delete curr;
+      }
+      else
+      {
+        std::cout << "found delete target" << std::endl;
+        prev->next = curr->next;
+        curr->next = NULL;
+
+        delete curr;
+
+        size--;
+      }
     }
     else
     {
@@ -77,7 +91,7 @@ void Inventory::PrintItems()
   }
 }
 
-Item* Inventory::getItem(char* targetName)
+Item* Inventory::getItem(std::string targetName)
 {
   Item* getItem = NULL;
   invItemPtr returnNode;

@@ -28,9 +28,9 @@ int main()
 
   testInv.PrintItems();
 
-  std::cout << "deleting item 2" << std::endl;
+  std::cout << "deleting item 3" << std::endl;
 
-  testInv.DelItem("item 2");
+  testInv.DelItem("item 3");
 
   std::cout << "printing again" << std::endl;
 
