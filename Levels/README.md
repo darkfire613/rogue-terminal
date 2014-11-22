@@ -7,20 +7,16 @@ This document gives the basics for how to create your own rooms and levels. Each
 
 ```
 room_name
-
 DESC:
 A block of text describing the room. Can be as long as desired, and should accurately reflect the contents listed below. Cannot include newlines.
-
 NPCS:
 npc1
 npc2
 npc3
-
 ITEMS:
 item1
 item2
 item3
-
 EXITS:
 exit1
 exit2
